@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { SessionService } from '../session/session.service';
 
 @Component({
   selector: 'app-home',
@@ -13,6 +14,37 @@ export class HomePage {
   data2 = "World";
   data = this.data1 + " " + this.data2;
   arr = ["aaa", "bbbb", "cccc", "ddd", "eee"];
-  constructor() { }
+  constructor(
+    private session: SessionService
+  ) { }
+  Alert() {
+    this.session.showAlert("Hello");
+  }
+  Confirm() {
+    this.session.showConfirm("Hello").then(rs => {
+      if (rs == true) {
 
+      } else {
+
+      }
+    });
+  }
+  Toast() {
+    this.session.showToast("Hello", 5000);
+  }
+  Get() {
+    this.session.getStorage("data1").then(rs => {
+      this.session.showAlert(rs);
+    });
+  }
+  Set() {
+    this.session.setStorage("data1", "Hello").then(rs => {
+      this.session.showAlert(rs);
+    });
+  }
+  Remove() {
+    this.session.removeStorage("data1").then(rs => {
+      this.session.showAlert(rs);
+    });
+  }
 }
