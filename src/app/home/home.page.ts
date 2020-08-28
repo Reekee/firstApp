@@ -6,7 +6,13 @@ import { Component } from '@angular/core';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
-
-  constructor() {}
+  num1 = 15;
+  num2 = 20;
+  num = this.num1 + this.num2;
+  data1 = "Hello";
+  data2 = "World";
+  data = this.data1 + " " + this.data2;
+  arr = ["aaa", "bbbb", "cccc", "ddd", "eee"];
+  constructor() { }
 
 }
