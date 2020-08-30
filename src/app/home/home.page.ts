@@ -23,9 +23,9 @@ export class HomePage {
   Confirm() {
     this.session.showConfirm("Hello").then(rs => {
       if (rs == true) {
-
+        alert("OK")
       } else {
-
+        alert("NO")
       }
     });
   }
@@ -46,5 +46,8 @@ export class HomePage {
     this.session.removeStorage("data1").then(rs => {
       this.session.showAlert(rs);
     });
+  }
+  GoToPage2() {
+    this.session.linkTo("page2");
   }
 }
