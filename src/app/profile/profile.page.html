@@ -1,0 +1,23 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-back-button></ion-back-button>
+        </ion-buttons>
+        <ion-title>โปรไฟล์ส่วนตัว</ion-title>
+    </ion-toolbar>
+</ion-header>
+<ion-content>
+
+    <ion-list>
+        <ion-item>
+            <ion-label>ชื่อ - นามสกุล</ion-label>
+            <ion-note slot="end">{{ user.user_name }} {{ user.user_lname }}</ion-note>
+        </ion-item>
+        <ion-item>
+            <ion-label>ชื่อผู้ใช้งาน</ion-label>
+            <ion-note slot="end">{{ user.username }}</ion-note>
+        </ion-item>
+    </ion-list>
+
+
+</ion-content>

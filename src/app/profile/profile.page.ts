@@ -2,24 +2,23 @@ import { Component, OnInit } from '@angular/core';
 import { SessionService } from '../session/session.service';
 
 @Component({
-  selector: 'app-page2',
-  templateUrl: './page2.page.html',
-  styleUrls: ['./page2.page.scss'],
+  selector: 'app-profile',
+  templateUrl: './profile.page.html',
+  styleUrls: ['./profile.page.scss'],
 })
-export class Page2Page implements OnInit {
-
+export class ProfilePage implements OnInit {
+  user = {};
   constructor(
     private session: SessionService
   ) { }
-
   ngOnInit() {
+    this.LoadProfile();
   }
-  TestCallApi() {
-    this.session.ajax(this.session.api + "get-data.php", {
-      aaaa: "Jorn"
+  LoadProfile() {
+    this.session.ajax(this.session.api + "get-profile.php", {
+      user_id: '2'
     }, true).then((rs: any) => {
-      alert(rs.data);
-      alert(rs.num);
+      this.user = rs.data;
     }).catch(err => {
       alert("ติดต่อ API ไม่ได้");
     });

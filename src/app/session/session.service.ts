@@ -11,7 +11,7 @@ import { Router, NavigationExtras } from '@angular/router';
 export class SessionService {
     public status = false;  // ตัวแปรควบคุมการล็อกอิน  // true : ล็อกอินแล้ว , false: ยังไม่ล็อกอิน
     public user: any = {};  // สำหรับเก็บข้อมูลของผู้ลอกอินในขณะนั้น 
-    public api = "";     // ตัวแปรสำหรับชี้ที่ตั้งของ Api
+    public api = "http://localhost/firstAppApi/";     // ตัวแปรสำหรับชี้ที่ตั้งของ Api
     public apiTimeout: number = 5000;
     constructor(
         private http: HttpClient,

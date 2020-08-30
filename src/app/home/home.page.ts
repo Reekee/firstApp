@@ -50,4 +50,7 @@ export class HomePage {
   GoToPage2() {
     this.session.linkTo("page2");
   }
+  GoToProfile() {
+    this.session.linkTo("profile");
+  }
 }
