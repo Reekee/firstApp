@@ -9,7 +9,7 @@ import { Router, NavigationExtras } from '@angular/router';
     providedIn: 'root'
 })
 export class SessionService {
-    public status = false;  // ตัวแปรควบคุมการล็อกอิน  // true : ล็อกอินแล้ว , false: ยังไม่ล็อกอิน
+    public login = false;  // ตัวแปรควบคุมการล็อกอิน  // true : ล็อกอินแล้ว , false: ยังไม่ล็อกอิน
     public user: any = {};  // สำหรับเก็บข้อมูลของผู้ลอกอินในขณะนั้น 
     public api = "http://localhost/firstAppApi/";     // ตัวแปรสำหรับชี้ที่ตั้งของ Api
     public apiTimeout: number = 5000;

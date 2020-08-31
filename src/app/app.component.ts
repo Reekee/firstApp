@@ -30,7 +30,11 @@ export class AppComponent {
         if (rs == null) {
           this.session.linkTo("login");
         } else {
-          this.session.linkTo("home");
+          this.session.getStorage("user").then(rs2 => {
+            this.session.login = true;
+            this.session.user = rs2;
+            this.session.linkTo("home");
+          });
         }
       });
 

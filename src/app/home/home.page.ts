@@ -53,4 +53,7 @@ export class HomePage {
   GoToProfile() {
     this.session.linkTo("profile");
   }
+  GoToPayment() {
+    this.session.linkTo("payment");
+  }
 }

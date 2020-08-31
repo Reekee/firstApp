@@ -1,0 +1,13 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-back-button></ion-back-button>
+        </ion-buttons>
+        <ion-title>payment-detail</ion-title>
+    </ion-toolbar>
+</ion-header>
+<ion-content>
+    <img src="{{ payment.payment_slip }}">
+    <p>วันที่ชำระ {{ payment.payment_date }}</p>
+    <p>ยอดเงิน {{ payment.payment_amount }} บาท</p>
+</ion-content>

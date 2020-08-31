@@ -12,11 +12,13 @@ export class ProfilePage implements OnInit {
     private session: SessionService
   ) { }
   ngOnInit() {
+
+
     this.LoadProfile();
   }
   LoadProfile() {
     this.session.ajax(this.session.api + "get-profile.php", {
-      user_id: '2'
+      user_id: this.session.user.user_id
     }, true).then((rs: any) => {
       this.user = rs.data;
     }).catch(err => {
@@ -24,7 +26,10 @@ export class ProfilePage implements OnInit {
     });
   }
   logout() {
+    this.session.login = false;
+    this.session.user = {};
     this.session.removeStorage("login");
+    this.session.removeStorage("user");
     this.session.linkTo("login");
   }
 }
