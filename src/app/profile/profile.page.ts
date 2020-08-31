@@ -23,4 +23,8 @@ export class ProfilePage implements OnInit {
       alert("ติดต่อ API ไม่ได้");
     });
   }
+  logout() {
+    this.session.removeStorage("login");
+    this.session.linkTo("login");
+  }
 }
